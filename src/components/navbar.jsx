@@ -4,6 +4,7 @@ import Weblogo from "../assets/images/readly.jpg"
 
 export default function Navbar() {
   return (
+    <>
     <div className="w-full h-16 bg-[#393280] flex items-center justify-between px-6">
       <img src={Weblogo} alt="Logo" className="w-32 h-full" />
     
@@ -63,5 +64,32 @@ export default function Navbar() {
         </div>
       </div>
     </div>
+    <div className="div">
+        <nav className="w-full ">
+      <ul className="flex justify-center items-center gap-6 py-3 text-lg font-semibold text-gray-800">
+        {[
+          { name: "HOME", active: true },
+          { name: "ABOUT US", active: false },
+          { name: "BOOKS", active: false },
+          { name: "NEW RELEASE", active: false },
+          { name: "CONTACT US", active: false },
+          { name: "BLOG", active: false },
+        ].map((item, index) => (
+          <li key={index} className="flex items-center">
+            {index !== 0 && <span className="m-2 text-gray-400">|</span>}
+            <a
+              href="#"
+              className={`${
+                item.active ? "text-red-600" : "text-gray-800"
+              } hover:text-blue-600 transition duration-200`}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    </div>
+    </>
   );
 }
