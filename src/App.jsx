@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 import Navbar from './components/navbar'
+import Headpage from './components/headpage'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <>
      <div className='h-fit w-screen'>
       <Navbar/>
+      <Headpage/>
      </div>
     </>
   )
