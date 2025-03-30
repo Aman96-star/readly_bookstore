@@ -11,7 +11,7 @@ import img3 from '../assets/images/img3.png';
 
 function Headpage() {
   return (
-    <div className="min-h-[400px] w-screen">
+    <div className="min-h-[400px] w-full overflow-x-hidden">
       {/* Swiper */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
