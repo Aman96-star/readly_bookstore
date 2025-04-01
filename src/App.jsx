@@ -25,6 +25,8 @@ function App() {
       {/* new  */}
       {/* sdjosudiou */}
      {/* Strak */}
+     {/* streak 2  */}
+     {/* aadmakmd */}
      </div>
     </>
   )
