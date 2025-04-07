@@ -3,7 +3,8 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/navbar'
 import Headpage from './components/headpage'
-import Categories from './components/categories'
+import Fiction from './components/fiction'
+import NonFiction from './components/nonfiction'
 
 
 function App() {
@@ -15,7 +16,35 @@ function App() {
       <Navbar/>
       <Headpage/>
       {/* category list books type  */}
-      <Categories/>
+    <Fiction/>
+{/* Adventure stories
+Classics
+Crime
+Fairy tales, fables, and folk tales
+Fantasy
+Historical fiction
+Horror
+Humour and satire
+Literary fiction
+Mystery
+Poetry
+Plays
+Romance
+Science fiction
+Short stories
+Thrillers
+War
+Women’s fiction
+Young adult      */}
+      <NonFiction/>
+{/* Autobiography and memoir
+Biography
+Essays
+Non-fiction novel
+Self-help */}
+
+
+
       {/* main ecommerce items items gird map is used */}
       {/*1st is top sellers 2nd is recommended for you  */}
 
