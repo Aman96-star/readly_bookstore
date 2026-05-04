@@ -45,8 +45,41 @@ readly-bookstore/
 │
 └── config/
 ```
-
-
+#Fronted structure--------------------------------
+```
+frontend/
+│
+├── public/                 # Images, icons, static files
+│
+├── src/
+│   ├── app/                # Pages / Routes (Next.js App Router)
+│   │   ├── page.js         # Home page
+│   │   ├── login/page.js
+│   │   ├── register/page.js
+│   │   ├── books/page.js
+│   │   ├── cart/page.js
+│   │
+│   ├── components/         # Reusable UI components
+│   │   ├── Navbar.js
+│   │   ├── BookCard.js
+│   │   ├── Footer.js
+│   │
+│   ├── services/           # API calls (important 🔥)
+│   │   ├── authService.js
+│   │   ├── bookService.js
+│   │
+│   ├── store/              # State management
+│   │   ├── store.js
+│   │   ├── authSlice.js
+│   │
+│   ├── utils/              # Helper functions
+│   │   ├── api.js
+│   │
+│   ├── styles/             # CSS / Tailwind
+│
+├── package.json
+├── next.config.js
+```
 
 
 
