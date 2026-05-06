@@ -81,7 +81,12 @@ frontend/
 ├── next.config.js
 ```
 
-
+My navbar Layout
+```
+-----------------------------------
+| Logo | Menu Links | Buttons |
+-----------------------------------
+```
 
 
 
