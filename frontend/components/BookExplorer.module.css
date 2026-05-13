@@ -1,0 +1,340 @@
+/* BookExplorer.module.css */
+
+/* ── Shell layout ─────────────────────────────────────────────── */
+.shell {
+  display: flex;
+  min-height: 640px;
+  height: 80vh;
+  max-height: 860px;
+  border: 1px solid #e2e4e9;
+  border-radius: 16px;
+  overflow: hidden;
+  font-family: "DM Sans", "Geist", ui-sans-serif, system-ui, sans-serif;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 24px rgba(0,0,0,0.04);
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────── */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: #0f1117;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid #1e2028;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 16px 14px;
+  border-bottom: 1px solid #1e2028;
+  flex-shrink: 0;
+}
+
+.sidebarTitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.sidebarCount {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  background: #1e2028;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+.sidebarList {
+  list-style: none;
+  margin: 0;
+  padding: 8px 8px 8px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebarList::-webkit-scrollbar { width: 4px; }
+.sidebarList::-webkit-scrollbar-thumb { background: #2a2d36; border-radius: 4px; }
+
+.sidebarItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #9ca3af;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  position: relative;
+}
+
+.sidebarItem:hover {
+  background: #1a1d26;
+  color: #e5e7eb;
+}
+
+.sidebarItemActive {
+  font-weight: 500;
+}
+
+.sidebarEmoji {
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sidebarLabel {
+  flex: 1;
+  line-height: 1.35;
+}
+
+.sidebarDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* ── Panel ────────────────────────────────────────────────────── */
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.panelHeader {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f0f1f3;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panelHeadingRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panelEmoji {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.panelTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f1117;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.panelMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+
+.panelBadge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* ── Book list ────────────────────────────────────────────────── */
+.bookList {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.bookList::-webkit-scrollbar { width: 4px; }
+.bookList::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 4px; }
+
+/* Row enter animation */
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bookRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 24px;
+  border-bottom: 1px solid #f5f6f8;
+  animation: rowIn 0.25s ease both;
+  transition: background 0.1s;
+}
+
+.bookRow:last-child {
+  border-bottom: none;
+}
+
+.bookRow:hover {
+  background: #fafafa;
+}
+
+.rank {
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: #9ca3af;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.bookMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bookTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookAuthor {
+  font-size: 12px;
+  color: #9ca3af;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.medal {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Footer ───────────────────────────────────────────────────── */
+.panelFooter {
+  padding: 10px 24px;
+  border-top: 1px solid #f0f1f3;
+  font-size: 11.5px;
+  color: #9ca3af;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Dark mode ────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .shell {
+    background: #111318;
+    border-color: #1e2028;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 24px rgba(0,0,0,0.2);
+  }
+
+  .panel {
+    background: #111318;
+  }
+
+  .panelTitle { color: #f3f4f6; }
+
+  .panelHeader,
+  .panelFooter {
+    border-color: #1e2028;
+  }
+
+  .bookRow {
+    border-bottom-color: #1a1d24;
+  }
+
+  .bookRow:hover { background: #161921; }
+
+  .bookTitle { color: #f3f4f6; }
+  .bookAuthor { color: #4b5563; }
+  .panelFooter { color: #4b5563; }
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .shell {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    border-radius: 12px;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #1e2028;
+  }
+
+  .sidebarList {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    padding: 6px 8px;
+  }
+
+  .sidebarItem {
+    flex-shrink: 0;
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .sidebarDot { display: none; }
+
+  .bookRow { padding: 11px 16px; }
+  .panelHeader { padding: 16px 16px 12px; }
+  .panelFooter { padding: 10px 16px; }
+}

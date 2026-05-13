@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -11,9 +12,12 @@ export default function Footer() {
         {/* Left Section */}
         <div className="md:col-span-2">
 
-          <h1 className="text-3xl font-bold mb-4">
-            Readly
-          </h1>
+          <Image
+                    src="/Images/Logo_Design.png"
+                    alt="Readly Logo"
+                    width={120}
+                    height={50}
+                       />
 
           <p className="text-sm leading-7">
             Readly Bookstore brings book lovers together to

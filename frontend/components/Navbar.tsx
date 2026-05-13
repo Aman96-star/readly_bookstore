@@ -1,5 +1,6 @@
 // components/Navbar.jsx
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -10,9 +11,14 @@ export default function Navbar() {
 
         {/* Left Section */}
         <div>
-          <h1 className="text-2xl font-bold">
-            Readly
-          </h1>
+          <Image
+          src="/Images/Logo_Design.png"
+          alt="Readly Logo"
+          width={120}
+          height={50}
+             />
+
+        
         </div>
 
         {/* Center Section */}
