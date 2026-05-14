@@ -1,3 +1,5 @@
+import BookCarousel from "@/components/BookCarousel/BookCarousel";
+import BookExplorer from "@/components/BookExplorer";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
@@ -6,7 +8,9 @@ import Image from "next/image";
 export default function Home() {
   return (
   <>
-    <Footer/>
+  {/* <BookExplorer/> */}
+    {/* <Footer/> */}
+    <BookCarousel/>
   </>
   );
 }

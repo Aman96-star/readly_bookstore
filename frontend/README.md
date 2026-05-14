@@ -87,8 +87,29 @@ My navbar Layout
 | Logo | Menu Links | Buttons |
 -----------------------------------
 ```
+```
+books.ts
+(Data)
 
+   ↓
 
+BookExplorer.tsx
+(Logic + State)
+
+   ↓
+
+BookExplorer.module.css
+(UI Design)
+
+   ↓
+
+page.tsx
+(Render in Browser)
+
+   ↓
+
+User Interaction
+```
 
 
 

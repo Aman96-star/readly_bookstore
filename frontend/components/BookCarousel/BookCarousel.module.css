@@ -1,0 +1,411 @@
+/* BookCarousel.module.css */
+
+/* ─── Wrapper ──────────────────────────────────────────────── */
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+/* ─── Header row ───────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.counter {
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 0.1em;
+}
+
+/* ─── Viewport ─────────────────────────────────────────────── */
+.viewport {
+  border: 1px solid #e8e3dc;
+  border-radius: 12px;
+  background: #faf9f6;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ─── Slide ────────────────────────────────────────────────── */
+.slideWrap {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 320px;
+  animation: fadeSlide 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ─── Cover panel ──────────────────────────────────────────── */
+.coverPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 2rem 1.25rem;
+  border-right: 1px solid #e8e3dc;
+  background: #fff;
+}
+
+.bookCover {
+  width: 112px;
+  height: 162px;
+  border-radius: 3px 6px 6px 3px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1), 1px 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookCover:hover {
+  transform: translateY(-3px) rotate(1deg);
+  box-shadow: 6px 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+}
+
+.coverTitle {
+  font-family: "Georgia", serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  padding: 0 14px;
+  line-height: 1.45;
+  z-index: 1;
+}
+
+.coverAuthor {
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  text-align: center;
+  padding: 0 14px;
+  margin-top: 6px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.genreTag {
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 0;
+}
+
+/* ─── Info panel ───────────────────────────────────────────── */
+.infoPanel {
+  padding: 2rem 2rem 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ─── Badge ────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.badgeIcon {
+  font-size: 11px;
+}
+
+/* ─── Book title & author ──────────────────────────────────── */
+.title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.author {
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Stars ────────────────────────────────────────────────── */
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.starFull {
+  font-size: 13px;
+  color: #c8902a;
+}
+
+.starEmpty {
+  font-size: 13px;
+  color: #ddd;
+}
+
+.reviewCount {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: #aaa;
+  margin-left: 6px;
+}
+
+/* ─── Description ──────────────────────────────────────────── */
+.description {
+  font-family: "Georgia", serif;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─── Price row ────────────────────────────────────────────── */
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.price {
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.originalPrice {
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.discount {
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #2e7d32;
+  background: #e8f5e9;
+  padding: 2px 7px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Action buttons ───────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btnCart {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a1a1a;
+  color: #faf9f6;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btnCart:hover {
+  background: #333;
+}
+
+.btnCart:active {
+  transform: scale(0.98);
+}
+
+.btnWish {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #e0d8cc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btnWish:hover {
+  background: #fff0f3;
+  color: #c0395a;
+  border-color: #f5b8c8;
+}
+
+/* ─── Progress bar ─────────────────────────────────────────── */
+.progressBar {
+  height: 2px;
+  background: #ede8e0;
+}
+
+.progressFill {
+  height: 100%;
+  background: #1a1a1a;
+  transition: width 0.1s linear;
+}
+
+/* ─── Controls row ─────────────────────────────────────────── */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0 0.125rem;
+}
+
+/* ─── Dots ─────────────────────────────────────────────────── */
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d5cfc5;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: width 0.25s ease, border-radius 0.25s ease, background 0.25s ease;
+}
+
+.dotActive {
+  width: 22px;
+  border-radius: 3px;
+  background: #1a1a1a;
+}
+
+/* ─── Nav buttons ──────────────────────────────────────────── */
+.navBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.navBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid #e0d8cc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.navBtn:hover {
+  background: #f5f0e8;
+  border-color: #c8bfb0;
+}
+
+.navBtn:active {
+  transform: scale(0.95);
+}
+
+/* ─── Responsive ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .slideWrap {
+    grid-template-columns: 1fr;
+  }
+
+  .coverPanel {
+    border-right: none;
+    border-bottom: 1px solid #e8e3dc;
+    padding: 1.5rem 1rem;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .bookCover {
+    width: 80px;
+    height: 116px;
+    flex-shrink: 0;
+  }
+
+  .genreTag {
+    margin-top: 4px;
+  }
+
+  .infoPanel {
+    padding: 1.25rem 1rem;
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 1.15rem;
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
