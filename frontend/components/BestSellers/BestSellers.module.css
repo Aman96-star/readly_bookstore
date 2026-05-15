@@ -1,0 +1,283 @@
+/* BestSellers.module.css */
+
+/* ─── Section ────────────────────────────────────────────────────────────────── */
+.section {
+  width: 100%;
+  padding: 2.5rem 2rem;
+  background: #f7f7f5;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.headingAccent {
+  /* Matches the "l" in Sellers from the screenshot — standard styling */
+  color: #111;
+}
+
+.subheading {
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Show All button ────────────────────────────────────────────────────────── */
+.showAllBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: #111;
+  background: #fff;
+  border: 1.5px solid #111;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.showAllBtn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ─── Grid / horizontal scroll ───────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 1.5rem 1rem;
+  }
+
+  .grid {
+    /* Horizontal scroll on mobile, like the reference */
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+
+  .grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .grid::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 2px;
+  }
+
+  .grid > div {
+    scroll-snap-align: start;
+    flex: 0 0 160px;
+  }
+}
+
+/* ─── Card ───────────────────────────────────────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: transparent;
+  /* Staggered fade-up animation */
+  animation: cardIn 0.4s ease both;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Cover image ────────────────────────────────────────────────────────────── */
+.coverWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #e8e4dc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.coverWrap:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  transform: translateY(-3px);
+}
+
+.coverImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.coverWrap:hover .coverImg {
+  transform: scale(1.03);
+}
+
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.25s ease;
+  pointer-events: none;
+}
+
+.coverWrap:hover .hoverOverlay {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Meta ───────────────────────────────────────────────────────────────────── */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bookTitle {
+  font-family: "Georgia", serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.35;
+  /* Truncate long titles to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bookAuthor {
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  color: #888;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Pricing row ────────────────────────────────────────────────────────────── */
+.pricing {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.originalPrice {
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.salePrice {
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ── Green discount badge (matches your spec) ── */
+.discountBadge {
+  display: inline-block;
+  background: #22c55e;
+  color: #fff;
+  font-family: "Courier New", monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* ─── Add to Bag button ──────────────────────────────────────────────────────── */
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  padding: 11px 0;
+  margin-top: 6px;
+
+  /* Green primary — as specified */
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+
+.addBtn:hover {
+  background: #15803d;
+}
+
+.addBtn:active {
+  transform: scale(0.97);
+}

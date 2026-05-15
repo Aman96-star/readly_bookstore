@@ -1,3 +1,4 @@
+import BestSellers from "@/components/BestSellers/BestSellers";
 import BookCarousel from "@/components/BookCarousel/BookCarousel";
 import BookExplorer from "@/components/BookExplorer";
 import Footer from "@/components/Footer";
@@ -11,6 +12,10 @@ export default function Home() {
   {/* <BookExplorer/> */}
     {/* <Footer/> */}
     <BookCarousel/>
+    <BestSellers
+  // onShowAll={() => router.push("/books")}
+  // onAddToBag={(book) => addToCart(book)}
+/>
   </>
   );
 }
