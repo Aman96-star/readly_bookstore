@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="md:col-span-2">
 
           <Image
-                    src="/Images/Logo_Design.png"
+                    src="/Images/readly_logo.png"
                     alt="Readly Logo"
                     width={120}
                     height={50}
