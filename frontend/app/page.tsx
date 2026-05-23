@@ -13,10 +13,10 @@ export default function Home() {
     {/* <Footer/> */}
     <BookCarousel/>
     <Footer/>
-    {/* <BestSellers
+    <BestSellers
   // onShowAll={() => router.push("/books")}
   // onAddToBag={(book) => addToCart(book)}
-/> */}
+/>
   </>
   );
 }
