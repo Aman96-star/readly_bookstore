@@ -2,11 +2,11 @@ import { Suspense } from "react";
 import BookExplorer from "@/components/BookExplorer";
 
 export const metadata = {
-  title: "Book Explorer",
-  description: "120 essential books across 12 categories",
+  title: "Categories",
+  description: "Explore books by category",
 };
 
-export default function BooksPage() {
+export default function CategoriesPage() {
   return (
     <main
       style={{
@@ -20,7 +20,6 @@ export default function BooksPage() {
         fontFamily: "DM Sans, Geist, ui-sans-serif, system-ui, sans-serif",
       }}
     >
-      {/* Page heading */}
       <div style={{ width: "100%", maxWidth: 900, marginBottom: "1.5rem" }}>
         <h1
           style={{
@@ -31,7 +30,7 @@ export default function BooksPage() {
             letterSpacing: "-0.02em",
           }}
         >
-          Reading list
+          Categories
         </h1>
         <p
           style={{
@@ -40,11 +39,10 @@ export default function BooksPage() {
             margin: "4px 0 0",
           }}
         >
-          12 categories · 120 essential books
+          Browse top books across all genres.
         </p>
       </div>
 
-      {/* Component */}
       <div style={{ width: "100%", maxWidth: 900 }}>
         <Suspense fallback={null}>
           <BookExplorer />

@@ -115,7 +115,7 @@ interface BookCardProps {
 
 function BookCard({ book, cloudName, onAddToBag, index }: BookCardProps) {
   const saved = discountAmount(book.originalPrice, book.salePrice);
-  const imgSrc = cloudinaryUrl(cloudName, book.cloudinaryId);
+const imgSrc = book.cloudinaryId;  
 
   return (
     <article

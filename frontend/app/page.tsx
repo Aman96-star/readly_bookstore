@@ -9,14 +9,14 @@ import Image from "next/image";
 export default function Home() {
   return (
   <>
-  {/* <BookExplorer/> */}
-    {/* <Footer/> */}
+  
+
     <BookCarousel/>
-    <Footer/>
     <BestSellers
   // onShowAll={() => router.push("/books")}
   // onAddToBag={(book) => addToCart(book)}
 />
+<Footer/>
   </>
   );
 }
