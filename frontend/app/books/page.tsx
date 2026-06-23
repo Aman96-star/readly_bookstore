@@ -20,7 +20,7 @@ export default function BooksPage() {
         fontFamily: "DM Sans, Geist, ui-sans-serif, system-ui, sans-serif",
       }}
     >
-      {/* Page heading */}
+      {/* Page heading
       <div style={{ width: "100%", maxWidth: 900, marginBottom: "1.5rem" }}>
         <h1
           style={{
@@ -42,14 +42,9 @@ export default function BooksPage() {
         >
           12 categories · 120 essential books
         </p>
-      </div>
+      </div> */}
 
-      {/* Component */}
-      <div style={{ width: "100%", maxWidth: 900 }}>
-        <Suspense fallback={null}>
-          <BookExplorer />
-        </Suspense>
-      </div>
+
     </main>
   );
 }

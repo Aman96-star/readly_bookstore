@@ -21,6 +21,7 @@ interface Book {
   authorColor: string;
   badgeBg: string;
   badgeColor: string;
+  
 }
 
 const BOOKS: Book[] = [
@@ -342,7 +343,7 @@ export default function BookCarousel() {
       {/* Controls */}
       <div className={styles.controls}>
         <div className={styles.dots} role="tablist" aria-label="Select book">
-          {BOOKS.map((b, i) => (
+          {BOOKS.map((b, i) => ( 
             <button
               key={b.id}
               role="tab"

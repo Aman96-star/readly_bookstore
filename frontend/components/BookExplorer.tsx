@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { GENRES, Genre, Book } from "@/data/books";
 import styles from "./BookExplorer.module.css";
@@ -73,15 +71,15 @@ function BookRow({
 function SidebarItem({
   genre,
   isActive,
-  href,
+  onClick,
 }: {
   genre: Genre;
   isActive: boolean;
-  href: string;
+  onClick: () => void;
 }) {
   return (
-    <Link
-      href={href}
+    <button
+      onClick={onClick}
       className={`${styles.sidebarItem} ${isActive ? styles.sidebarItemActive : ""}`}
       style={
         isActive
@@ -92,7 +90,6 @@ function SidebarItem({
             }
           : {}
       }
-      aria-current={isActive ? "page" : undefined}
     >
       <span className={styles.sidebarEmoji} aria-hidden="true">
         {genre.emoji}
@@ -104,29 +101,29 @@ function SidebarItem({
           style={{ backgroundColor: genre.accent }}
         />
       )}
-    </Link>
+    </button>
   );
 }
 
 /* ─── Main component ─────────────────────────────────────────── */
 export default function BookExplorer() {
-  const searchParams = useSearchParams();
-  const activeId = searchParams.get("category") ?? GENRES[0].id;
+  const [activeId, setActiveId] = useState<string>(GENRES[0].id);
   const [animKey, setAnimKey] = useState(0);
   const listRef = useRef<HTMLUListElement>(null);
-  const didMount = useRef(false);
 
-  const active = GENRES.find((g) => g.id === activeId) ?? GENRES[0];
+  const active = GENRES.find((g) => g.id === activeId)!;
 
-  useEffect(() => {
-    if (!didMount.current) {
-      didMount.current = true;
-      return;
+  function switchGenre(id: string) {
+    if (id === activeId) {
+      // Re-run the list animation even when the selected category is already active.
+      setAnimKey((k) => k + 1);
+    } else {
+      setActiveId(id);
+      setAnimKey((k) => k + 1);
     }
-
-    setAnimKey((k) => k + 1);
+    // scroll list to top on mobile
     listRef.current?.scrollTo({ top: 0 });
-  }, [activeId]);
+  }
 
   return (
     <div className={styles.shell}>
@@ -142,7 +139,7 @@ export default function BookExplorer() {
               <SidebarItem
                 genre={g}
                 isActive={g.id === activeId}
-                href={`/books?category=${g.id}`}
+                onClick={() => switchGenre(g.id)}
               />
             </li>
           ))}
