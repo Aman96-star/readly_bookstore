@@ -111,7 +111,87 @@ page.tsx
 User Interaction
 ```
 
+``` backend Section 
 
+backend/
+│
+├── src/
+│   ├── main/
+│   │
+│   ├── java/
+│   │   └── com/
+│   │       └── bookstore/
+│   │
+│   │           ├── BookstoreApplication.java     # Main Class
+│   │
+│   │           ├── config/                       # Configuration
+│   │           │      ├── SecurityConfig.java
+│   │           │      ├── CorsConfig.java
+│   │           │      └── JwtConfig.java
+│   │
+│   │           ├── controller/                   # REST APIs
+│   │           │      ├── AuthController.java
+│   │           │      ├── BookController.java
+│   │           │      ├── CartController.java
+│   │           │      ├── OrderController.java
+│   │           │      └── UserController.java
+│   │
+│   │           ├── service/                      # Business Logic
+│   │           │      ├── AuthService.java
+│   │           │      ├── BookService.java
+│   │           │      ├── CartService.java
+│   │           │      ├── OrderService.java
+│   │           │      └── UserService.java
+│   │           │
+│   │           ├── service/
+│   │           │      └── impl/
+│   │           │             ├── AuthServiceImpl.java
+│   │           │             ├── BookServiceImpl.java
+│   │           │             ├── CartServiceImpl.java
+│   │           │             ├── OrderServiceImpl.java
+│   │           │             └── UserServiceImpl.java
+│   │
+│   │           ├── repository/                   # Database Layer
+│   │           │      ├── UserRepository.java
+│   │           │      ├── BookRepository.java
+│   │           │      ├── CartRepository.java
+│   │           │      └── OrderRepository.java
+│   │
+│   │           ├── entity/                       # Database Tables
+│   │           │      ├── User.java
+│   │           │      ├── Book.java
+│   │           │      ├── Cart.java
+│   │           │      └── Order.java
+│   │
+│   │           ├── dto/                          # Request/Response Objects
+│   │           │      ├── LoginRequest.java
+│   │           │      ├── RegisterRequest.java
+│   │           │      ├── BookResponse.java
+│   │           │      └── OrderResponse.java
+│   │
+│   │           ├── exception/                    # Custom Exceptions
+│   │           │      ├── GlobalExceptionHandler.java
+│   │           │      └── ResourceNotFoundException.java
+│   │
+│   │           ├── security/                     # JWT Authentication
+│   │           │      ├── JwtFilter.java
+│   │           │      ├── JwtUtil.java
+│   │           │      └── CustomUserDetailsService.java
+│   │
+│   │           └── util/                         # Utility Classes
+│   │                  └── AppConstants.java
+│   │
+│   └── resources/
+│       ├── application.properties
+│       ├── application-dev.properties
+│       ├── application-prod.properties
+│       └── static/
+│
+├── pom.xml
+├── mvnw
+└── mvnw.cmd
+
+```
 
 
 
