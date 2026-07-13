@@ -151,6 +151,7 @@ export default function Footer() {
         </div>
 
       </div>
+      {/* sdks */}
 
       {/* Bottom Section */}
       <div className="border-t border-green-400">
