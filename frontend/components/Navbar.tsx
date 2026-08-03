@@ -10,7 +10,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-green-600 text-white shadow-lg">
+    <nav className="bg-[#803896] text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -35,7 +35,7 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-lg font-medium hover:text-green-100 transition-colors duration-200 relative group"
+                    className="text-lg font-medium hover:text-[#a18aa8] transition-colors duration-200 relative group"
                   >
                     {link.label}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
@@ -55,13 +55,13 @@ export default function Navbar() {
                 placeholder="Search books..."
                 className="px-4 py-2 rounded-l-lg text-black text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
-              <button className="bg-green-700 hover:bg-green-800 px-4 py-2 rounded-r-lg transition-colors duration-200">
+              <button className="bg-[#3e0850] hover:bg-[#23022e] px-4 py-2 rounded-r-lg transition-colors duration-200">
                 🔍
               </button>
             </div>
 
             {/* Cart Button */}
-            <button className="bg-white text-green-600 font-semibold px-4 py-2 rounded-lg hover:bg-green-50 transition-colors duration-200 whitespace-nowrap">
+            <button className="bg-white text-[#803896] font-semibold px-4 py-2 rounded-lg hover:bg-[#b78bc5] transition-colors duration-200 whitespace-nowrap">
               🛒 Cart
             </button>
 
