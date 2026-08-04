@@ -198,7 +198,7 @@ function BookCard({
           <span
             className="
             rounded
-            bg-green-500
+            bg-[#803896]
             px-2
             py-1
             text-[10px]
@@ -222,7 +222,7 @@ function BookCard({
           justify-center
           gap-2
           rounded-lg
-          bg-green-600
+          bg-[#803896]
           py-3
           text-xs
           font-bold
@@ -231,7 +231,7 @@ function BookCard({
           text-white
           transition
           duration-200
-          hover:bg-green-700
+          hover:bg-[#421750]
           active:scale-95
         "
         >

@@ -27,7 +27,7 @@ export default function Footer() {
 
           <div className="mt-6 space-y-2">
             <p>support@readly.com</p>
-            <p>+91 98765 43210</p>
+            <p>+91 9617**809</p>
           </div>
 
         </div>
@@ -41,19 +41,19 @@ export default function Footer() {
           <ul className="space-y-2">
 
             <li>
-              <Link href="/">Fiction</Link>
+              <Link href="/books">Books</Link>
             </li>
 
             <li>
-              <Link href="/">Self Help</Link>
+              <Link href="/categories">Categories</Link>
             </li>
 
             <li>
-              <Link href="/">Educational</Link>
+              <Link href="/featured-video">Featured Video</Link>
             </li>
 
             <li>
-              <Link href="/">Comics</Link>
+              <Link href="/faq">FAQ</Link>
             </li>
 
           </ul>
@@ -68,19 +68,19 @@ export default function Footer() {
           <ul className="space-y-2">
 
             <li>
-              <Link href="/">Privacy Policy</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
 
             <li>
-              <Link href="/">Terms & Conditions</Link>
+              <Link href="/terms-of-use">Terms & Conditions</Link>
             </li>
 
             <li>
-              <Link href="/">Shipping Policy</Link>
+              <Link href="/shipping">Shipping Policy</Link>
             </li>
 
             <li>
-              <Link href="/">Returns</Link>
+              <Link href="/return">Returns</Link>
             </li>
 
           </ul>
@@ -95,19 +95,19 @@ export default function Footer() {
           <ul className="space-y-2">
 
             <li>
-              <Link href="/">About Us</Link>
+              <Link href="/about">About Us</Link>
             </li>
 
             <li>
-              <Link href="/">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
 
             <li>
-              <Link href="/">Blogs</Link>
+              <Link href="/blog">Blogs</Link>
             </li>
 
             <li>
-              <Link href="/">Careers</Link>
+              <Link href="/career">Careers</Link>
             </li>
 
           </ul>
@@ -124,27 +124,27 @@ export default function Footer() {
 
         <div className="flex flex-wrap gap-3">
 
-          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-green-600 transition">
+          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-[#421750] transition">
             New Arrivals
           </button>
 
-          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-green-600 transition">
+          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-[#421750] transition">
             Best Sellers
           </button>
 
-          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-green-600 transition">
+          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-[#421750] transition">
             Romance
           </button>
 
-          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-green-600 transition">
+          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-[#421750] transition">
             Mystery
           </button>
 
-          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-green-600 transition">
+          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-[#421750] transition">
             Self Help
           </button>
 
-          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-green-600 transition">
+          <button className="border border-white px-4 py-2 rounded-md hover:bg-white hover:text-[#421750] transition">
             Educational
           </button>
 
@@ -165,15 +165,15 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex gap-4 mt-4 md:mt-0">
 
-            <div className="bg-white text-green-600 w-8 h-8 rounded-full flex items-center justify-center">
+            <div className="bg-white text-[#421750] w-8 h-8 rounded-full flex items-center justify-center">
               f
             </div>
 
-            <div className="bg-white text-green-600 w-8 h-8 rounded-full flex items-center justify-center">
+            <div className="bg-white text-[#421750] w-8 h-8 rounded-full flex items-center justify-center">
               in
             </div>
 
-            <div className="bg-white text-green-600 w-8 h-8 rounded-full flex items-center justify-center">
+            <div className="bg-white text-[#421750] w-8 h-8 rounded-full flex items-center justify-center">
               x
             </div>
 

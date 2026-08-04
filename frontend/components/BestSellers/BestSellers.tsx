@@ -417,7 +417,7 @@ function BookCard({
           <span
             className="
             rounded
-            bg-green-500
+            bg-[#803896]
             px-2
             py-1
             text-[10px]
@@ -441,7 +441,7 @@ function BookCard({
           justify-center
           gap-2
           rounded-lg
-          bg-green-600
+          bg-[#803896]
           py-3
           text-xs
           font-bold
@@ -450,7 +450,7 @@ function BookCard({
           text-white
           transition
           duration-200
-          hover:bg-green-700
+          hover:bg-[#421750]
           active:scale-95
         "
         >
@@ -532,37 +532,43 @@ export default function BestSellers({
 
       {/* Books */}
 
-      <div
-        className="
-        grid
-        grid-cols-5
-        gap-5
+      {/* Books */}
+<div
+  className="
+    flex
+    flex-nowrap
+    gap-5
+    justify-between
 
-        xl:grid-cols-4
-        md:grid-cols-3
+    max-[600px]:
+    overflow-x-auto
+    max-[600px]:pb-2
+    max-[600px]:snap-x
+    max-[600px]:snap-mandatory
+  "
+>
+  {books.map((book, i) => (
+    <div
+      key={book.id}
+      className="
+        flex-1
+        min-w-0
 
-        max-[600px]:flex
-        max-[600px]:overflow-x-auto
-        max-[600px]:gap-4
-        max-[600px]:pb-2
-        max-[600px]:snap-x
-        max-[600px]:snap-mandatory
+        max-[600px]:
+        flex-none
+        max-[600px]:w-[160px]
+        max-[600px]:snap-start
       "
-      >
-        {books.map((book, i) => (
-          <div
-            key={book.id}
-            className="max-[600px]:min-w-[160px] max-[600px]:snap-start"
-          >
-            <BookCard
-              book={book}
-              cloudName={cloudName}
-              onAddToBag={onAddToBag}
-              index={i}
-            />
-          </div>
-        ))}
-      </div>
+    >
+      <BookCard
+        book={book}
+        cloudName={cloudName}
+        onAddToBag={onAddToBag}
+        index={i}
+      />
+    </div>
+  ))}
+</div>
     </section>
   );
 }

@@ -3,6 +3,7 @@ import BookCarousel from "@/components/BookCarousel/BookCarousel";
 import BookExplorer from "@/components/BookExplorer";
 import Footer from "@/components/Footer";
 import Horror_cat from "@/components/List/Horror_cat";
+import Mystry from "@/components/List/Mystry";
 import Selfhelp from "@/components/List/Selfhelp";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
@@ -20,6 +21,8 @@ export default function Home() {
 />
     <Horror_cat/>
     <Selfhelp/>
+    <Mystry/>
+    
 <Footer/>
   </>
   );
