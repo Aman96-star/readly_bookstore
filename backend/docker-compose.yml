@@ -1,0 +1,26 @@
+# ============================================================================
+# docker-compose.yml — one-command MySQL setup for local development.
+# ============================================================================
+# Usage:  docker compose up -d
+# This starts a MySQL 8 container matching the credentials already set in
+# application.properties (db: readly_db, user: root, password: root).
+# You do NOT need this if you already have MySQL installed locally — it's
+# just a faster way to get a clean database running via Docker.
+# ============================================================================
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: readly-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: readly_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - readly-mysql-data:/var/lib/mysql
+
+volumes:
+  readly-mysql-data:
