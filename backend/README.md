@@ -1,4 +1,4 @@
-# Readly Bookstore — Backend (Spring Boot + MySQL)
+ # Readly Bookstore — Backend (Spring Boot + MySQL)
 
 This is the backend API for the Readly Bookstore Next.js frontend. It implements every endpoint described in the frontend's `Frontend → Backend Spec`, using **Spring Boot 3**, **Spring Security + JWT**, **Spring Data JPA**, and **MySQL**.
 
