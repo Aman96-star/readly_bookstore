@@ -158,6 +158,7 @@ This starts MySQL 8 on `localhost:3306` with database `readly_db`, user `root`, 
 
 **Option B: Local MySQL install**
 ```sql
+\connect root@localhost
 CREATE DATABASE readly_db;
 ```
 Then update `spring.datasource.username` / `spring.datasource.password` in `application.properties` to match your local MySQL credentials.
