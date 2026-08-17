@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================
+     logback.xml — Logging configuration for Readly backend
+     ============================================================================
+     Logback is the logging framework used by Spring Boot by default.
+     This file controls:
+       - Log levels (DEBUG, INFO, WARN, ERROR)
+       - Output destinations (console, file)
+       - Log format and timestamps
+       - Separate loggers for different packages
+     ============================================================================
+-->
+<configuration>
+    <!-- Define where logs are written -->
+    <property name="LOG_FILE" value="logs/readly-backend.log"/>
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
+
+    <!-- Console output (for development) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- File output (for production) -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <!-- Roll over the file when it reaches 10MB -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/readly-backend-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Logger for Readly application code (verbose in dev, quiet in prod) -->
+    <logger name="com.readly" level="DEBUG"/>
+
+    <!-- Logger for Spring Security (useful for debugging auth issues) -->
+    <logger name="org.springframework.security" level="INFO"/>
+
+    <!-- Logger for Hibernate SQL (useful for debugging JPA queries) -->
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
+
+    <!-- Root logger configuration (applies to all loggers not configured above) -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!-- Spring profiles allow different logging levels based on environment -->
+    <springProfile name="dev">
+        <root level="DEBUG">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="WARN">
+            <appender-ref ref="FILE"/>
+        </root>
+    </springProfile>
+</configuration>
