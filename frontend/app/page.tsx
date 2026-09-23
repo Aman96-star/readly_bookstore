@@ -27,3 +27,6 @@ export default function Home() {
   </>
   );
 }
+
+// Feature : user can login and register the website 
+// Start day-1
