@@ -199,7 +199,26 @@ Color Background #803896
 hover:bg-[#421750]
 
 
+//---------------------------------------------
+Add new feature : Login/logout/register feature 
+```
+frontend/
+  app/
+    login/
+      page.tsx
+    register/
+      page.tsx
+    layout.tsx
+    page.tsx
+  components/
+    auth/
+      LoginForm.tsx
+      RegisterForm.tsx
+      AuthLayout.tsx
+  services/
+    api_calls.tsx
 
+    ```
 
 
 
