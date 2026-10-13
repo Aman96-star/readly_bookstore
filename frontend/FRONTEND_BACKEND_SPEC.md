@@ -90,6 +90,7 @@ Base URL: `/api` (or root routes like `/books`). Use JSON over HTTPS.
 - Categories
   - GET `/api/categories`
     - Response: [ { id, name, slug } ]
+    -NA
 
 - Cart
   - POST `/api/cart` (save server-side cart)
