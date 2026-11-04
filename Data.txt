@@ -1,0 +1,26 @@
+Curretly i making a project called bookstore management website. 
+
+Frontend :Reactjs-react-app
+* src/component/
+* src/pages/
+* src/Services/--API calls
+
+Backend :Springboot-sb-app
+* src/main/java/../controller/
+* src/main/java/../services/
+* src/main/java/../repository/
+* src/main/java/../entity/
+* src/main/resources/../application.properties/
+
+Database : sceme history 
+Migration folder/
+* Categories.sql
+* Books.sql
+* Users.sql
+* orders.sql
+* categories.sql
+* cart_Items.sql
+* order_Items.sql
+* payment.sql
+excellent ..
+Awsome....
